@@ -2,20 +2,33 @@
     
     "manifest_version": 3,
     "version": "1.0.0",
+    "host_permissions": [
+      "https://github.com/*"
+    ],
     "name": "GithubIcon",
     "description": "Github icon Extension",
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
     "icons": {
-      "16": "images/githubbutton.png",
-      "48": "images/githubbutton.png",
-      "128": "images/githubbutton.png"
+      "16": "images/githubbbutton.png",
+      "48": "images/githubbbutton.png",
+      "128": "images/githubbbutton.png"
     },
     "content_scripts": [{
-      "matches": ["https://github.com/"],
-      "css":[
-        "css/centering.css"
-      ],
+      "matches": ["https://github.com/*"],
       "js": [
         "content.js"
-      ]
+      ],
+      "run_at": "document_start"
+    }],
+    "web_accessible_resources": [{
+      "resources": ["images/bacgraund.png","images/githubbbutton.png","images/Githubanime.mp4"],
+      "matches": ["https://github.com/*"]
     }]
+    
+
   }
