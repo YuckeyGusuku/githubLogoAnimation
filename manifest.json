@@ -1,0 +1,21 @@
+{
+    
+    "manifest_version": 3,
+    "version": "1.0.0",
+    "name": "GithubIcon",
+    "description": "Github icon Extension",
+    "icons": {
+      "16": "images/githubbutton.png",
+      "48": "images/githubbutton.png",
+      "128": "images/githubbutton.png"
+    },
+    "content_scripts": [{
+      "matches": ["https://github.com/"],
+      "css":[
+        "css/centering.css"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }]
+  }

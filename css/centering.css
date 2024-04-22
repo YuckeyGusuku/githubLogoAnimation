@@ -1,0 +1,49 @@
+/* styles.css */
+
+body {
+    background-color: #343434; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 画面の高さいっぱいに広がるように */
+    margin: 0; /* ページの余白を除去 */
+}
+  
+
+.video-container {
+    position: relative;
+}
+
+.video-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(61%, 28%) scale(0.78);
+    z-index: 2;
+}
+.video-container .color-box img{
+  position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(40%, 91%) scale(0.35);
+    z-index: 2;
+}
+.video-container video {
+    display: block;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+  
+#videoPlayer {
+    display: block;
+    margin: auto; /* ビデオを中央に配置 */
+}
+  
+
+#playButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+  
