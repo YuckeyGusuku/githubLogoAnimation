@@ -1,3 +1,29 @@
+function adjustImageScale() {
+  const pageWidth = document.documentElement.clientWidth;
+
+  const scaleRatio = pageWidth / 100; // originalVideoWidthは動画の元の幅
+  const newScale = 0.76 * scaleRatio; // 0.76は元のスケール値、これを動的に変更します
+  const positiony = 29*scaleRatio;
+
+  const colorBoxScaleRatio = pageWidth / 100; // originalVideoWidthは動画の元の幅
+  const newColorBoxScale = 0.35 * colorBoxScaleRatio; // 0.35は元のスケール値
+  const colorBoxpositiony = 92*scaleRatio;
+
+  // .video-container imgのスケールを更新
+  const imgs = document.querySelectorAll('.video-container img');
+  imgs.forEach(img => {
+      img.style.transform = ` scale(${newScale})`;
+      img.style.left = `${positiony}px`;
+  });
+
+  // .video-container .color-box imgのスケールを更新
+  const colorBoxImgs = document.querySelectorAll('.video-container .color-box img');
+  colorBoxImgs.forEach(img => {
+      img.style.transform = `scale(${newColorBoxScale})`;
+      img.style.left = `${colorBoxpositiony}px`;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     
     const cssLink = document.createElement("link");
@@ -5,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cssLink.type = "text/css";
     cssLink.rel = "stylesheet";
     document.head.appendChild(cssLink);
+    
 
     // ビデオコンテナを作成
     const videoContainer = document.createElement('div');
@@ -40,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     videoSource.type = 'video/mp4';
     videoPlayer.appendChild(videoSource);
     videoContainer.appendChild(videoPlayer);
+    // ページ読み込み時に一度サイズを調整
+    adjustImageScale();
+    
   
     // トグルビデオ機能をプレイボタンに追加
     playButton.onclick = function() {
@@ -58,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // フェードアウト後にビデオコンテナを非表示にする
       setTimeout(() => {
           videoContainer.style.display = 'none';
-      }, 1000); // 1秒後（フェードアウトの遷移時間に合わせる）
+      }, 500); // 1秒後（フェードアウトの遷移時間に合わせる）
     });
 });
   

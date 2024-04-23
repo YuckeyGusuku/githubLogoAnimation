@@ -14,7 +14,7 @@
 .video-container {
     position: fixed;
     justify-content: center;
-    transition: opacity 1s ease-out;
+    transition: opacity 0.5s ease-out;
     opacity: 1;
     top: 0;
     left: 0;
@@ -29,22 +29,24 @@
     width: 100vw;
     height: 100vh;
     background-color: #343434; 
-    z-index: 0; /* 他の要素の前に表示 */
+    z-index: 0; 
 }
 
 .video-container img {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(97%, 29%) scale(0.76);
+    top: 105px;
+    left: 411px;
+    transform:  scale(0.76);
     z-index: 2;
+    
 }
 .video-container .color-box img{
-  position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(60%, 92%) scale(0.35);
+    position: absolute;
+    top: 320px;
+    left: 570px;
+    transform: scale(0.35);
     z-index: 2;
+    
 }
 .video-container video {
     display: block;
@@ -55,7 +57,7 @@
   
 #videoPlayer {
     display: block;
-    margin: auto; /* ビデオを中央に配置 */
+    margin: auto; 
 }
   
 
