@@ -1,8 +1,7 @@
-const msg = 'Hello';
 document.addEventListener('DOMContentLoaded', function() {
     
     const cssLink = document.createElement("link");
-    cssLink.href = chrome.runtime.getURL('centering.css'); 
+    cssLink.href = chrome.runtime.getURL('css/centering.css'); 
     cssLink.type = "text/css";
     cssLink.rel = "stylesheet";
     document.head.appendChild(cssLink);
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const colorBox = document.createElement('div');
     colorBox.className = 'color-box';
     const backgroundImage = document.createElement('img');
-    backgroundImage.src = chrome.runtime.getURL('images/backgraund.png');
+    backgroundImage.src = chrome.runtime.getURL('images/background.png');
     colorBox.appendChild(backgroundImage);
     videoContainer.appendChild(colorBox);
   
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.createElement('button');
     playButton.id = 'playButton';
     const playButtonImg = document.createElement('img');
-    playButtonImg.src = chrome.runtime.getURL('images/githubbbutton.png'); 
+    playButtonImg.src = chrome.runtime.getURL('images/githubbutton.png'); 
     playButtonImg.alt = 'Play button';
     playButton.appendChild(playButtonImg);
     videoContainer.appendChild(playButton);
