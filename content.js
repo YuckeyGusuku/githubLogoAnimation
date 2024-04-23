@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoContainer = document.createElement('div');
     videoContainer.className = 'video-container';
   
-    // 背景画像を含むdiv（color-box）を作成
+    // 背景色boxを作成
+    const backBox = document.createElement('div');
+    backBox.className = 'fullScreenBackBox';
+    videoContainer.appendChild(backBox);
+
+    // （color-box）を作成
     const colorBox = document.createElement('div');
     colorBox.className = 'color-box';
     const backgroundImage = document.createElement('img');

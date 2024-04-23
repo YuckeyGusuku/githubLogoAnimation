@@ -36,14 +36,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(64%, 23%) scale(0.78);
+    transform: translate(97%, 29%) scale(0.76);
     z-index: 2;
 }
 .video-container .color-box img{
   position: absolute;
     top: 0;
     left: 0;
-    transform: translate(45%, 92%) scale(0.35);
+    transform: translate(60%, 92%) scale(0.35);
     z-index: 2;
 }
 .video-container video {

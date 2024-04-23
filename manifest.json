@@ -8,7 +8,8 @@
     "name": "GithubIcon",
     "description": "Github icon Extension",
     "permissions": [
-      "activeTab"
+      "activeTab",
+      "scripting"
     ],
     "background": {
       "service_worker": "background.js"
