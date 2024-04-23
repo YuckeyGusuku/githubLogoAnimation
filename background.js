@@ -1,9 +1,8 @@
-// タブの状態を追跡するオブジェクト
 let tabLoadState = {};
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   // タブが完全に読み込まれたときに実行
-  if (changeInfo.status === 'complete' && tab.url && tab.url.includes('https://github.com/')) {
+  if (changeInfo.status === 'complete' && tab.url && tab.url.includes('https://github.com/*')) {
     // タブが以前に実行されたかどうかをチェック
     if (!tabLoadState[tabId]) {
       // タブでスクリプトを実行していない場合、実行する

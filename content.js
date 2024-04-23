@@ -1,31 +1,6 @@
-function adjustImageScale() {
-  const pageWidth = document.documentElement.clientWidth;
-
-  const scaleRatio = pageWidth / 100; // originalVideoWidthは動画の元の幅
-  const newScale = 0.76 * scaleRatio; // 0.76は元のスケール値、これを動的に変更します
-  const positiony = 29*scaleRatio;
-
-  const colorBoxScaleRatio = pageWidth / 100; // originalVideoWidthは動画の元の幅
-  const newColorBoxScale = 0.35 * colorBoxScaleRatio; // 0.35は元のスケール値
-  const colorBoxpositiony = 92*scaleRatio;
-
-  // .video-container imgのスケールを更新
-  const imgs = document.querySelectorAll('.video-container img');
-  imgs.forEach(img => {
-      img.style.transform = ` scale(${newScale})`;
-      img.style.left = `${positiony}px`;
-  });
-
-  // .video-container .color-box imgのスケールを更新
-  const colorBoxImgs = document.querySelectorAll('.video-container .color-box img');
-  colorBoxImgs.forEach(img => {
-      img.style.transform = `scale(${newColorBoxScale})`;
-      img.style.left = `${colorBoxpositiony}px`;
-  });
-}
 
 document.addEventListener('DOMContentLoaded', function() {
-    
+  console :"hello";
     const cssLink = document.createElement("link");
     cssLink.href = chrome.runtime.getURL('css/centering.css'); 
     cssLink.type = "text/css";
@@ -36,19 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // ビデオコンテナを作成
     const videoContainer = document.createElement('div');
     videoContainer.className = 'video-container';
-  
     // 背景色boxを作成
     const backBox = document.createElement('div');
     backBox.className = 'fullScreenBackBox';
     videoContainer.appendChild(backBox);
+    
 
+    // ビデオコンテナを作成
+    const videoWrapper = document.createElement('div');
+    videoWrapper.className = 'videoWrapper ';
+    videoContainer.appendChild(videoWrapper);
+  
     // （color-box）を作成
     const colorBox = document.createElement('div');
     colorBox.className = 'color-box';
     const backgroundImage = document.createElement('img');
     backgroundImage.src = chrome.runtime.getURL('images/background.png');
     colorBox.appendChild(backgroundImage);
-    videoContainer.appendChild(colorBox);
+    videoWrapper.appendChild(colorBox);
   
     // プレイボタンを作成
     const playButton = document.createElement('button');
@@ -57,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playButtonImg.src = chrome.runtime.getURL('images/githubbutton.png'); 
     playButtonImg.alt = 'Play button';
     playButton.appendChild(playButtonImg);
-    videoContainer.appendChild(playButton);
+    videoWrapper.appendChild(playButton);
   
     // ビデオ要素を作成
     const videoPlayer = document.createElement('video');
@@ -66,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     videoSource.src = chrome.runtime.getURL('images/Githubanime.mp4');
     videoSource.type = 'video/mp4';
     videoPlayer.appendChild(videoSource);
-    videoContainer.appendChild(videoPlayer);
-    // ページ読み込み時に一度サイズを調整
-    adjustImageScale();
+    videoWrapper.appendChild(videoPlayer);
     
   
     // トグルビデオ機能をプレイボタンに追加
