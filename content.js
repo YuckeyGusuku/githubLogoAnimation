@@ -48,5 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // 作成したビデオコンテナをbodyの最初に追加
     document.body.insertBefore(videoContainer, document.body.firstChild);
-  });
+    videoPlayer.addEventListener('ended', function() {
+      videoContainer.style.opacity = '0';
+      // フェードアウト後にビデオコンテナを非表示にする
+      setTimeout(() => {
+          videoContainer.style.display = 'none';
+      }, 1000); // 1秒後（フェードアウトの遷移時間に合わせる）
+    });
+});
   

@@ -1,31 +1,49 @@
 /* styles.css */
 
-body {
+/*body {
     background-color: #343434; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 画面の高さいっぱいに広がるように */
-    margin: 0; /* ページの余白を除去 */
-}
+    height: 100vh; /* 画面の高さいっぱいに広がるように 
+    margin: 0;
+}*/
   
 
+
 .video-container {
-    position: relative;
+    position: fixed;
+    justify-content: center;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:100;
+}
+.video-container .fullScreenBackBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #343434; 
+    z-index: 0; /* 他の要素の前に表示 */
 }
 
 .video-container img {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(61%, 28%) scale(0.78);
+    transform: translate(64%, 23%) scale(0.78);
     z-index: 2;
 }
 .video-container .color-box img{
   position: absolute;
     top: 0;
     left: 0;
-    transform: translate(40%, 91%) scale(0.35);
+    transform: translate(45%, 92%) scale(0.35);
     z-index: 2;
 }
 .video-container video {
