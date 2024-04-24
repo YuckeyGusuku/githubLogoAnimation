@@ -23,25 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
     videoContainer.appendChild(videoWrapper);
   
     // （color-box）を作成
-    const colorBox = document.createElement('div');
-    colorBox.className = 'color-box';
+    /*const colorBox = document.createElement('div');
+    colorBox.className = 'colorBox';
+    colorBox.id = 'colorBox';
     const backgroundImage = document.createElement('img');
     backgroundImage.src = chrome.runtime.getURL('images/background.png');
-    colorBox.appendChild(backgroundImage);
-    videoWrapper.appendChild(colorBox);
+    colorBox.appendChild(backgroundImage)
+    videoWrapper.appendChild(colorBox);*/
   
     // プレイボタンを作成
     const playButton = document.createElement('button');
     playButton.id = 'playButton';
     const playButtonImg = document.createElement('img');
     playButtonImg.src = chrome.runtime.getURL('images/githubbutton.png'); 
-    playButtonImg.alt = 'Play button';
     playButton.appendChild(playButtonImg);
     videoWrapper.appendChild(playButton);
   
     // ビデオ要素を作成
     const videoPlayer = document.createElement('video');
-    videoPlayer.id = 'videoPlayer';
     const videoSource = document.createElement('source');
     videoSource.src = chrome.runtime.getURL('images/Githubanime.mp4');
     videoSource.type = 'video/mp4';
