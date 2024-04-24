@@ -3,7 +3,7 @@
     "manifest_version": 3,
     "version": "1.0.0",
     "host_permissions": [
-      "https://github.com/*"
+      "https://github.com/dashboard"
     ],
     "name": "GithubIcon",
     "description": "Github icon Extension",
@@ -20,7 +20,7 @@
       "128": "images/githubbutton.png"
     },
     "content_scripts": [{
-      "matches": ["https://github.com/*"],
+      "matches": ["https://github.com/dashboard"],
       "js": [
         "content.js"
       ],
