@@ -1,5 +1,5 @@
 # 機能
-(https://github.com/dashboard)にアクセスしたらロゴアニメーションが見れる
+(https://github.com/dashboard)  にアクセスしたらロゴアニメーションが見れる
 ## 実装方法
 このリポジトリをダウンロードして展開,  
 'chrome://extensions/'にアクセス  
