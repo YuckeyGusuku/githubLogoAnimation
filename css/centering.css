@@ -1,16 +1,8 @@
-/* styles.css */
-
-/*body {
-    background-color: #343434; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* 画面の高さいっぱいに広がるように 
-    margin: 0;
-}*/
-  
 .video-container {
     position: fixed;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     transition: opacity 0.5s ease-out;
     opacity: 1;
     top: 0;
@@ -19,45 +11,37 @@
     height: 100%;
     z-index:100;
 }
-.video-container .fullScreenBackBox {
+.fullScreenBackBox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: #343434; 
+    z-index: -1; 
+}
+.videoWrapper {
+    position: relative;
+    width: 960px;
+    height: 540px;
+    margin:auto;
     z-index: 0; 
 }
-.video-container .videoWrapper {
-    position: relative;
+
+.videoWrapper video {
+    position: absolute;
+    transform: translate(-50%, -50%);
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%);
-    background-color: #343434; 
     z-index: 1; 
 }
 
-.video-container video {
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    z-index: 10; 
-}
-/*.video-container .colorBox img{
+.video-container img{
     position: absolute;
     transform:  translate(-50%, -50%);
     top: 50%; 
     left: 50%; 
-    z-index: 3;
-}*/
-
-.video-container img {
-    position: absolute;
-    transform:  translate(-50%, -50%);
-    top: 50%; 
-    left: 50%;
-    z-index: 20;
+    z-index: 2;
 }
 
 #playButton {
