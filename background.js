@@ -1,8 +1,8 @@
 let tabLoadState = {};
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  // タブが完全に読み込まれたときに実行
-  if (changeInfo.status === 'complete' && tab.url && tab.url.includes('https://github.com/*')) {
+  // タブが完全に読み込まれたとき、かつGitHubのページであるときに実行
+  if (changeInfo.status === 'complete' && tab.url && new URL(tab.url).hostname === 'github.com') {
     // タブが以前に実行されたかどうかをチェック
     if (!tabLoadState[tabId]) {
       // タブでスクリプトを実行していない場合、実行する
@@ -10,7 +10,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         target: {tabId: tabId},
         files: ['content.js']
       });
-      // タブの状態を更新
+      // タブの状態を更新し、これ以上スクリプトを実行しないようにする
       tabLoadState[tabId] = true;
     }
   }
